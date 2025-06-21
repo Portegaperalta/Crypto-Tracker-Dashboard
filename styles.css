@@ -1,0 +1,49 @@
+:root {
+  --black: #000000;
+  --gray-text: #333333;
+  --gray-icon: #CCCCCC;
+  --white-bg: #FFFFFF;
+  --green: #4bcc00;
+  --dark-green: #35AF00;
+  --hover-green: #35AF00;
+  --up-green: #34b349;
+  --up-green-bg: #DEEBE0;
+  --down-red: #f02934;
+  --down-red-bg: #F1DDDE;
+  --gray-hover: #F2F2F2;
+  --orange-bitcoin: #F7931A;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo i {
+  color: var(--orange-bitcoin);
+  font-size: 2rem;
+}
+
+.user:hover {
+  cursor: pointer;
+}
+
+.user i {
+  font-size: 1.5rem;
+  color: var(--gray-icon);
+  border: 1px solid var(--gray-icon);
+  background-color: var(--white-bg);
+  padding: 10px;
+  border-radius: 30px;
+}
