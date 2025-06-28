@@ -96,9 +96,21 @@ td {
   background-color: var(--gray-hover);
 }
 
+#cryptoImg {
+  width: 100%;
+  max-width: 30px;
+}
+
+.crypto-name-img {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 #cryptoAbbreviation {
   color: var(--gray-avb);
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 #cryptoName {

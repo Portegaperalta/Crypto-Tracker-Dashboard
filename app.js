@@ -4,6 +4,7 @@ const cryptoDashboard = document.querySelector('#cryptoDashboard')
 
 const cryptoInfos = document.querySelectorAll('#cryptoInfo')
 const cryptoNumbers = document.querySelectorAll('#cryptoNumber')
+const cryptoImages = document.querySelectorAll('#cryptoImg')
 const cryptoNames = document.querySelectorAll('#cryptoName')
 const cryptoSymbol = document.querySelectorAll('#cryptoAbbreviation')
 const cryptoPrices = document.querySelectorAll('#cryptoPrice')
@@ -34,6 +35,7 @@ const fetchCryptoData = async () => {
     console.log(coins)
 
     for (let i = 0; i < coins.length; i++) {
+      cryptoImages[i].src = coins[i].image
       cryptoNames[i].innerText = coins[i].name
       cryptoPrices[i].innerText = `$ ${coins[i].current_price}`
       cryptoSymbol[i].innerText = coins[i].symbol
