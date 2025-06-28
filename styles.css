@@ -1,6 +1,8 @@
 :root {
   --black: #000000;
   --gray-text: #333333;
+  --gray-avb: #666;
+  --gray-border: #f2f2f2;
   --gray-icon: #CCCCCC;
   --white-bg: #FFFFFF;
   --green: #4bcc00;
@@ -56,7 +58,9 @@ main {
 }
 
 .content-table {
-  padding-top: 100px;
+  margin-top: 100px;
+  border: 1px solid var(--gray-border);
+  border-radius: 40px;
 }
 
 #cryptoDashboard {
@@ -68,9 +72,13 @@ main {
 
 #cryptoDashboard thead tr {
   background-color: var(--white-bg);
+  color: var(--gray-text);
   text-align: left;
-  font-weight: bold;
   font-size: 1.1rem;
+}
+
+#cryptoDashboard thead tr th {
+  font-weight: 400;
 }
 
 #cryptoDashboard th,
@@ -84,4 +92,32 @@ td {
 
 #cryptoInfo:hover {
   background-color: var(--gray-hover);
+}
+
+#cryptoAbbreviation {
+  color: var(--gray-avb);
+  font-weight: 400;
+}
+
+#cryptoName {
+  color: var(--black);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.up {
+  color: var(--up-green);
+  background-color: var(--up-green-bg);
+}
+
+.down {
+  color: var(--down-red);
+  background-color: var(--down-red-bg);
+}
+
+@media all and (max-width: 480px) {
+
+  #cryptoName {
+    font-size: 1rem;
+  }
 }
