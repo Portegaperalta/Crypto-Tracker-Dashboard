@@ -2,11 +2,14 @@ const body = document.querySelector('body')
 const userIcon = document.querySelector('.user')
 const cryptoDashboard = document.querySelector('#cryptoDashboard')
 
-const cryptoInfo = document.querySelectorAll('#cryptoInfo')
-const cryptoNumber = document.querySelectorAll('#cryptoNumber')
-const cryptoName = document.querySelectorAll('#cryptoName')
-const cryptoPrice = document.querySelectorAll('#cryptoPrice')
-const cryptoChange = document.querySelectorAll('#cryptoChange')
+const cryptoInfos = document.querySelectorAll('#cryptoInfo')
+const cryptoNumbers = document.querySelectorAll('#cryptoNumber')
+const cryptoNames = document.querySelectorAll('#cryptoName')
+const cryptoSymbol = document.querySelectorAll('#cryptoAbbreviation')
+const cryptoPrices = document.querySelectorAll('#cryptoPrice')
+const cryptoChanges = document.querySelectorAll('#cryptoChange')
+
+const newImg = document.createElement('img')
 
 const fetchCryptoData = async () => {
 
@@ -29,8 +32,25 @@ const fetchCryptoData = async () => {
     const res = await axios.get('https://api.coingecko.com/api/v3/coins/markets/', config)
     const coins = res.data
     console.log(coins)
+
+    for (let i = 0; i < coins.length; i++) {
+      cryptoNames[i].innerText = coins[i].name
+      cryptoPrices[i].innerText = `$ ${coins[i].current_price}`
+      cryptoSymbol[i].innerText = coins[i].symbol
+      cryptoChanges[i].innerText = coins[i].market_cap_change_percentage_24h
+
+      if (cryptoChanges[i].innerText < 0) {
+        cryptoChanges[i].classList.add('down')
+      } else {
+        cryptoChanges[i].classList.add('up')
+      }
+
+    }
   }
   catch (error) {
     console.log(`Error:${error}`)
   }
 }
+
+fetchCryptoData()
+
