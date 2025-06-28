@@ -107,16 +107,34 @@ td {
   gap: 10px;
 }
 
+#cryptoName {
+  color: var(--black);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 #cryptoAbbreviation {
   color: var(--gray-avb);
   font-weight: 400;
   text-transform: uppercase;
 }
 
-#cryptoName {
-  color: var(--black);
-  font-size: 1.2rem;
-  font-weight: 500;
+.crypto-price-box div {
+  display: flex;
+}
+
+#cryptoChange {
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.bull-circle {
+  width: 6px;
+  height: 6px;
+  background-color: var(--gray-icon);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .up {
@@ -134,4 +152,13 @@ td {
   #cryptoName {
     font-size: 1rem;
   }
+
+  #cryptoAbbreviation {
+    display: none;
+  }
+
+  #cryptoPrice {
+    font-size: .9rem;
+  }
+
 }
