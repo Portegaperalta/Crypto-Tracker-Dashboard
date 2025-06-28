@@ -47,3 +47,33 @@ header {
   padding: 10px;
   border-radius: 30px;
 }
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-table {
+  padding-top: 100px;
+}
+
+#cryptoDashboard {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1rem;
+  min-width: 400px;
+}
+
+#cryptoDashboard thead tr {
+  background-color: var(--white-bg);
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#cryptoDashboard th,
+td {
+  padding: 12px 15px;
+}
