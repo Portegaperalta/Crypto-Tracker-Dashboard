@@ -77,3 +77,11 @@ main {
 td {
   padding: 12px 15px;
 }
+
+#cryptoInfo {
+  cursor: pointer;
+}
+
+#cryptoInfo:hover {
+  background-color: var(--gray-hover);
+}
