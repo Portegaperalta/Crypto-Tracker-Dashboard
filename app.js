@@ -56,3 +56,5 @@ getCryptoData()
 
 
 //update crypto data every 24hrs
+
+setInterval(() => { getCryptoData }, 1000 * 60 * 60 * 24)
