@@ -1,5 +1,7 @@
 :root {
   --black: #000000;
+  --dash-dark: #0d0d0d;
+  --hover-dark: #1A1A1A;
   --gray-text: #333333;
   --gray-avb: #666;
   --gray-border: #f2f2f2;
@@ -7,11 +9,15 @@
   --white-bg: #FFFFFF;
   --green: #4bcc00;
   --dark-green: #35AF00;
+  --dark-mode-green: #6ccf59;
+  --dark-mode-green-bg: #111E13;
   --hover-green: #35AF00;
   --up-green: #34b349;
   --up-green-bg: #DEEBE0;
   --down-red: #f02934;
   --down-red-bg: #F1DDDE;
+  --dark-mode-red: #ff4d4d;
+  --dark-mode-red-bg: #241011;
   --gray-hover: #F2F2F2;
   --orange-bitcoin: #F7931A;
 }
@@ -39,17 +45,9 @@ header {
   font-size: 2rem;
 }
 
-.user:hover {
-  cursor: pointer;
-}
-
-.user i {
+#darkToggleBtn {
   font-size: 1.5rem;
-  color: var(--gray-icon);
-  border: 1px solid var(--gray-icon);
-  background-color: var(--white-bg);
-  padding: 10px;
-  border-radius: 30px;
+  cursor: pointer;
 }
 
 main {
@@ -73,7 +71,6 @@ main {
 }
 
 #cryptoDashboard thead tr {
-  background-color: var(--white-bg);
   color: var(--gray-text);
   text-align: left;
   font-size: 1.1rem;
@@ -108,7 +105,6 @@ td {
 }
 
 #cryptoName {
-  color: var(--black);
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -147,7 +143,57 @@ td {
   background-color: var(--down-red-bg);
 }
 
+.dark-up {
+  color: var(--dark-mode-green);
+  background-color: var(--dark-mode-green-bg);
+}
+
+.dark-down {
+  color: var(--dark-mode-red);
+  background-color: var(--dark-mode-red-bg);
+}
+
+.body-dark {
+  background-color: var(--black);
+}
+
+.logo-dark {
+  color: var(--white-bg);
+}
+
+.btn-dark {
+  color: var(--white-bg);
+}
+
+.tr-dark {
+  background-color: var(--dash-dark);
+}
+
+.content-table-dark {
+  margin-top: 100px;
+  background-color: var(--dash-dark);
+  border: 1px solid var(--dash-dark);
+  border-radius: 40px;
+}
+
+.dashboard-dark {
+  background-color: var(--dash-dark);
+}
+
+.body-dark #cryptoInfo:hover {
+  background-color: var(--hover-dark);
+}
+
+.text-dark {
+  color: var(--white-bg);
+}
+
+
 @media all and (max-width: 480px) {
+
+  #cryptoDashboard thead {
+    display: none;
+  }
 
   #cryptoName {
     font-size: 1rem;

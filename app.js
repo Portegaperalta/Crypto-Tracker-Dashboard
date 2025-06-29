@@ -1,11 +1,16 @@
 const body = document.querySelector('body')
-const userIcon = document.querySelector('.user')
+const darkModeBtn = document.querySelector('#darkToggleBtn')
+const logoTitle = document.querySelector('.logo h1')
+
+const contentTable = document.querySelector('.content-table')
 const cryptoDashboard = document.querySelector('#cryptoDashboard')
+const cryptoDashTr = document.querySelector('#cryptoDashboardTr')
 const cryptoInfos = document.querySelectorAll('#cryptoInfo')
 const cryptoNumbers = document.querySelectorAll('#cryptoNumber')
 const cryptoImages = document.querySelectorAll('#cryptoImg')
 const cryptoNames = document.querySelectorAll('#cryptoName')
 const cryptoSymbol = document.querySelectorAll('#cryptoAbbreviation')
+const cryptoPriceBoxes = document.querySelectorAll('.crypto-price-box')
 const cryptoPrices = document.querySelectorAll('#cryptoPrice')
 const cryptoChanges = document.querySelectorAll('#cryptoChange')
 
@@ -58,3 +63,26 @@ getCryptoData()
 //update crypto data every 24hrs
 
 setInterval(() => { getCryptoData }, 1000 * 60 * 60 * 24)
+
+//dark mode toggle
+
+darkModeBtn.addEventListener('click', () => {
+  body.classList.toggle('body-dark')
+  logoTitle.classList.toggle('logo-dark')
+  darkModeBtn.classList.toggle('btn-dark')
+  contentTable.classList.toggle('content-table-dark')
+  cryptoDashboard.classList.toggle('dashboard-dark')
+
+
+  for (let i = 0; i < cryptoNumbers.length; i++) {
+    cryptoNumbers[i].classList.toggle('text-dark')
+    cryptoNames[i].classList.toggle('text-dark')
+    cryptoPriceBoxes[i].classList.toggle('text-dark')
+
+    if (cryptoChanges[i].innerText < 0) {
+      cryptoChanges[i].classList.toggle('dark-down')
+    } else {
+      cryptoChanges[i].classList.toggle('dark-up')
+    }
+  }
+})
